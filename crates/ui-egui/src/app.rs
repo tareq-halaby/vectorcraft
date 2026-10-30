@@ -73,6 +73,7 @@ impl VectorcraftApp {
                 cursors: Default::default(),
                 view_moved: None,
                 hover_cursor: None,
+                presented: None,
             },
             perf: Perf::default(),
             dock_rt: Default::default(),
