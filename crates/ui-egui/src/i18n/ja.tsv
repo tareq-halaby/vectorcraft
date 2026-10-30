@@ -5505,3 +5505,12 @@ anchor	Points:	ポイント:
 @msg	`segment` must be "straight" or "curved"	`segment` には "straight" または "curved" を指定してください
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` には "free"、"keepAngles" または "symmetric" を指定してください
 @msg	`{key}` must be [x, y]	`{key}` には [x, y] を指定してください
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	カラーの種類で選択
+	Objects with Spot Colors	特色を使用したオブジェクト
+	Objects with Color Effects	カラー効果のあるオブジェクト
+	RGB Images	RGB 画像
+	CMYK Images	CMYK 画像
+	Grayscale Images	グレースケール画像
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` は spotColors、colorEffects、rgbImages、cmykImages、grayImages のいずれかにしてください

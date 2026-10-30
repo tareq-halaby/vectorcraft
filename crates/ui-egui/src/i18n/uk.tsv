@@ -5416,3 +5416,12 @@ anchor	Points:	Точки:
 @msg	`segment` must be "straight" or "curved"	`segment` має бути "straight" або "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` має бути "free", "keepAngles" або "symmetric"
 @msg	`{key}` must be [x, y]	`{key}` має бути [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Виділити за типом кольору
+	Objects with Spot Colors	Об’єкти з плашковими кольорами
+	Objects with Color Effects	Об’єкти з колірними ефектами
+	RGB Images	Зображення RGB
+	CMYK Images	Зображення CMYK
+	Grayscale Images	Зображення у відтінках сірого
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` має бути spotColors, colorEffects, rgbImages, cmykImages або grayImages

@@ -5810,3 +5810,12 @@ anchor	Points:	Punts:
 @msg	`segment` must be "straight" or "curved"	`segment` ha de ser "straight" o "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` ha de ser "free", "keepAngles" o "symmetric"
 @msg	`{key}` must be [x, y]	`{key}` ha de ser [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Selecciona per tipus de color
+	Objects with Spot Colors	Objectes amb colors directes
+	Objects with Color Effects	Objectes amb efectes de color
+	RGB Images	Imatges RGB
+	CMYK Images	Imatges CMYK
+	Grayscale Images	Imatges en escala de grisos
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` ha de ser spotColors, colorEffects, rgbImages, cmykImages o grayImages

@@ -5854,3 +5854,10 @@ undo step. Missing `params` take the effect's dialog defaults; the objects' own 
 
 The panel picks an adjustment (Brightness/Contrast, Hue/Saturation, Levels, Temperature/Tint, Exposure, Desaturate or
 Invert Colors), sets its values, and then Add as Effect (`effect.apply`) or Apply as Filter (`addon.color.filter`).
+
+`addon.color.select {kind}` (Object › Plug-ins › Color Effects › Select by Color Kind) selects, among the objects Select
+All reaches and the objects inside groups (locked and hidden ones left out), those of one kind: `spotColors` (painted
+with a spot colour swatch, solid or in a gradient's stops), `colorEffects` (carrying a visible colour adjustment effect,
+on the object or on one of its fills or strokes; a group carrying one is selected whole), `rgbImages`, `cmykImages` or
+`grayImages` (images whose pixels are RGB, CMYK, or grayscale or 1-bit, read from the image's header). It returns the
+`count` selected.

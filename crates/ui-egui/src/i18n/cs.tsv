@@ -5819,3 +5819,12 @@ anchor	Points:	Body:
 @msg	`segment` must be "straight" or "curved"	`segment` musí být "straight" nebo "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` musí být "free", "keepAngles" nebo "symmetric"
 @msg	`{key}` must be [x, y]	`{key}` musí být [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Vybrat podle druhu barvy
+	Objects with Spot Colors	Objekty s přímými barvami
+	Objects with Color Effects	Objekty s barevnými efekty
+	RGB Images	Obrazy RGB
+	CMYK Images	Obrazy CMYK
+	Grayscale Images	Obrazy ve stupních šedi
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` musí být spotColors, colorEffects, rgbImages, cmykImages nebo grayImages

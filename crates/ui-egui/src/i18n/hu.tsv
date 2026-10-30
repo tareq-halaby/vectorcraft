@@ -5806,3 +5806,12 @@ anchor	Points:	Pontok:
 @msg	`segment` must be "straight" or "curved"	`segment`: "straight" vagy "curved" kell
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode`: "free", "keepAngles" vagy "symmetric" kell
 @msg	`{key}` must be [x, y]	`{key}`: [x, y] kell
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Kijelölés színtípus szerint
+	Objects with Spot Colors	Direkt színeket használó objektumok
+	Objects with Color Effects	Színeffektusos objektumok
+	RGB Images	RGB-képek
+	CMYK Images	CMYK-képek
+	Grayscale Images	Szürkeárnyalatos képek
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	A `kind` értéke spotColors, colorEffects, rgbImages, cmykImages vagy grayImages lehet

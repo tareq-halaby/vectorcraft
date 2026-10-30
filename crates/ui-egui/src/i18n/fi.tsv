@@ -5850,3 +5850,12 @@ anchor	Points:	Pisteet:
 @msg	`segment` must be "straight" or "curved"	`segment` on oltava "straight" tai "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` on oltava "free", "keepAngles" tai "symmetric"
 @msg	`{key}` must be [x, y]	`{key}` on oltava [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Valitse värityypin mukaan
+	Objects with Spot Colors	Objektit, joissa on spottivärejä
+	Objects with Color Effects	Objektit, joissa on väritehosteita
+	RGB Images	RGB-kuvat
+	CMYK Images	CMYK-kuvat
+	Grayscale Images	Harmaasävykuvat
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` on oltava spotColors, colorEffects, rgbImages, cmykImages tai grayImages

@@ -75,6 +75,20 @@ pub fn menu() -> Vec<Item> {
         Item::Cmd("Exposure…", "effect.dialog", json!({ "effect": "addon.color.exposure" })),
         Item::Cmd("Desaturate", "effect.apply", json!({ "effect": "addon.color.desaturate" })),
         Item::Cmd("Invert Colors", "effect.apply", json!({ "effect": "addon.color.invert" })),
+        Item::Sep,
+        Item::Sub(
+            "Select by Color Kind",
+            [
+                ("Objects with Spot Colors", "spotColors"),
+                ("Objects with Color Effects", "colorEffects"),
+                ("RGB Images", "rgbImages"),
+                ("CMYK Images", "cmykImages"),
+                ("Grayscale Images", "grayImages"),
+            ]
+            .into_iter()
+            .map(|(label, kind)| Item::Cmd(label, "addon.color.select", json!({ "kind": kind })))
+            .collect(),
+        ),
     ]
 }
 

@@ -5768,3 +5768,12 @@ anchor	Points:	Punten:
 @msg	`segment` must be "straight" or "curved"	`segment` moet "straight" of "curved" zijn
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` moet "free", "keepAngles" of "symmetric" zijn
 @msg	`{key}` must be [x, y]	`{key}` moet [x, y] zijn
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Selecteren op kleursoort
+	Objects with Spot Colors	Objecten met steunkleuren
+	Objects with Color Effects	Objecten met kleureffecten
+	RGB Images	RGB-afbeeldingen
+	CMYK Images	CMYK-afbeeldingen
+	Grayscale Images	Grijswaardenafbeeldingen
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` moet spotColors, colorEffects, rgbImages, cmykImages of grayImages zijn

@@ -5724,3 +5724,12 @@ anchor	Points:	Titik:
 @msg	`segment` must be "straight" or "curved"	`segment` harus "straight" atau "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` harus "free", "keepAngles" atau "symmetric"
 @msg	`{key}` must be [x, y]	`{key}` harus [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Pilih menurut Jenis Warna
+	Objects with Spot Colors	Objek dengan Warna Spot
+	Objects with Color Effects	Objek dengan Efek Warna
+	RGB Images	Gambar RGB
+	CMYK Images	Gambar CMYK
+	Grayscale Images	Gambar Skala Abu-abu
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` harus spotColors, colorEffects, rgbImages, cmykImages, atau grayImages

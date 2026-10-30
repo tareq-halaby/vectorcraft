@@ -1,6 +1,6 @@
 # Parity with Adobe Illustrator
 
-> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-30 · **Change:** minor (Place: a photo's EXIF orientation turns it upright (#4284); scores unchanged) · **Target:** Adobe Illustrator 2026 (30.x; public release notes through 30.7, August 2026)
+> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-30 · **Change:** minor (Color Effects add-on: Select by Color Kind; scores unchanged) · **Target:** Adobe Illustrator 2026 (30.x; public release notes through 30.7, August 2026)
 
 ## Feature submission evidence
 
@@ -1257,11 +1257,14 @@ to the colours themselves through the Edit Colors pass. Object › Plug-ins › 
 Tests: `addons::color` in `vectorcraft-effects` (exposure in stops, desaturate keeps lightness, invert twice is
 identity), `cmd::addons::color::tests` in `vectorcraft-engine` (drawn live without changing the colours; a filter as one
 undo step, with any adjustment and its params; bad requests refused) and `addons::color::tests` in
-`vectorcraft-ui-egui` (the menus and the panel). Commands: `docs/mcp.md` › Color Effects add-on.
+`vectorcraft-ui-egui` (the menus and the panel). Select by Color Kind (`addon.color.select`) selects the objects that use
+spot colours, carry a colour adjustment, or are RGB, CMYK or grayscale images
+(`select_by_color_kind_finds_spot_colours_effects_and_image_models`). Commands: `docs/mcp.md` › Color Effects add-on.
 ## Revision history
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-30 | minor | Color Effects add-on: Select by Color Kind; scores and estimates unchanged |
 | 2026-10-30 | minor | Place: a photo's EXIF orientation turns it upright (#4284); scores and estimates unchanged |
 | 2026-10-30 | minor | Contextual task bar: stays up through a click on another object, hides only for a drag (#4681); scores and estimates unchanged |
 | 2026-10-30 | minor | Draw Inside marks the corners of the object it draws into (#4319); scores and estimates unchanged |

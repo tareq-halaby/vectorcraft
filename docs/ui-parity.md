@@ -1,6 +1,6 @@
 # UI and interaction parity
 
-> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-30 · **Change:** minor (View › Hide Artboards hides their edges and shows the canvas as paper (#4038); scores unchanged) · **Target:** Adobe Illustrator 2026 (30.x)
+> **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-30 · **Change:** minor (Color Effects add-on: Select by Color Kind; scores unchanged) · **Target:** Adobe Illustrator 2026 (30.x)
 
 ## Feature submission evidence
 
@@ -326,7 +326,7 @@ next unit in the order a right-click on a ruler lists them, from Feet back to Po
 | Smart Pen add-on (VectorCraft addition): Object › Plug-ins › Smart Pen selects the Smart Pen Tool, which the All Tools drawer lists under its own heading but neither toolbar shows as shipped (no shortcut), and opens the Smart Pen panel (next segment straight or curved; Remove Points Keep Shape, Make Smooth, Make Corner, Retract Handles, Close or Join). The tool draws (click: straight or curved segment, a curve after a straight one tangent; drag: smooth anchor, Alt breaks the handle, Shift 45°, Space moves it; Tab switches a segment; rubber band; close, join, continue) and edits without switching tools (click selects a point, drag moves it, Alt-click removes it keeping the shape, Shift+Alt-click deletes it, double-click toggles smooth/corner; handle drags with Shift and Alt; segment drags reshape, Alt-click adds a point) | done | `addon.pen.*`, `crates/tools/src/addons/smart_pen.rs`, `crates/ui-egui/src/addons/pen.rs` and their tests; not an Illustrator feature, so it is not scored |
 | Path Precision Tools add-on (VectorCraft addition): Object › Plug-ins › Path Precision Tools selects its three tools (Anchor Eraser Brush, Extend Path, Measure & Inspect), which the All Tools drawer lists under their own heading but neither toolbar shows as shipped, opens the Anchor Inspector panel (the selected anchor's X/Y and handle lengths and angles as fields; Make Smooth, Make Corner, Equalize Handles, Remove Points Keep Shape, Add Points, the three ways to close) and runs Add Points at / Split at Crossings; a double-click on the brush or Extend Path tool opens its options | done | `addon.pathtools.*`, `crates/tools/src/addons/`, `crates/ui-egui/src/addons/pathtools.rs` and their tests; not an Illustrator feature, so it is not scored |
 | Artwork Cleanup add-on (VectorCraft addition): Object › Plug-ins › Artwork Cleanup opens its panel, which checks the selection or the document for 16 kinds of issue, lists them with counts, and shows or fixes the picked rows or all of them, each fix one undo step; Simplify Anchors (Keep Shape), Rejoin Path Pieces and Deep Ungroup open their options first | done | `addon.cleanup.*`, `crates/ui-egui/src/addons/cleanup.rs` and its tests; not an Illustrator feature, so it is not scored |
-| Color Effects add-on (VectorCraft addition): live Exposure, Desaturate and Invert Colors in Effect › Color Effects and Object › Plug-ins › Color Effects; its panel picks a colour adjustment and its values and adds it as a live effect or applies it as a filter, into the colours, as one undo step | done | `addon.color.*`, `crates/ui-egui/src/addons/color.rs` and its tests; not an Illustrator feature, so it is not scored |
+| Color Effects add-on (VectorCraft addition): live Exposure, Desaturate and Invert Colors in Effect › Color Effects and Object › Plug-ins › Color Effects; its panel picks a colour adjustment and its values and adds it as a live effect or applies it as a filter, into the colours, as one undo step; Select by Color Kind selects the objects that use spot colours, carry colour effects, or are RGB, CMYK or grayscale images | done | `addon.color.*`, `crates/ui-egui/src/addons/color.rs` and its tests; not an Illustrator feature, so it is not scored |
 
 ## Look and feel
 
@@ -367,6 +367,7 @@ separate. Scores and hours unchanged. [Behavior and command details](development
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-30 | minor | Color Effects add-on: Select by Color Kind; scores and estimates unchanged |
 | 2026-10-30 | minor | View › Hide Artboards hides their edges and shows the canvas as paper (#4038); scores and estimates unchanged |
 | 2026-10-30 | minor | Contextual task bar: stays up through a click on another object, hides only for a drag (#4681); scores and estimates unchanged |
 | 2026-10-30 | minor | Draw Inside marks the corners of the object it draws into (#4319); scores and estimates unchanged |

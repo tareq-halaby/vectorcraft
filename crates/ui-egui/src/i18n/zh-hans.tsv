@@ -5659,3 +5659,12 @@ anchor	Points:	点：
 @msg	`segment` must be "straight" or "curved"	`segment` 必须是 "straight" 或 "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` 必须是 "free"、"keepAngles" 或 "symmetric"
 @msg	`{key}` must be [x, y]	`{key}` 必须是 [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	按颜色类型选择
+	Objects with Spot Colors	使用专色的对象
+	Objects with Color Effects	带颜色效果的对象
+	RGB Images	RGB 图像
+	CMYK Images	CMYK 图像
+	Grayscale Images	灰度图像
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` 必须是 spotColors、colorEffects、rgbImages、cmykImages 或 grayImages

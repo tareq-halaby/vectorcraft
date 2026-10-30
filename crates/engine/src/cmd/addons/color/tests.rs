@@ -87,3 +87,70 @@ fn bad_requests_are_refused() {
     s.execute("select.none", &json!({})).unwrap();
     assert!(s.execute("addon.color.filter", &json!({"effect": "addon.color.invert"})).is_err(), "nothing selected");
 }
+
+/// An embedded image object of `blob`, selected.
+fn image(s: &mut Session, key: &str, blob: vectorcraft_doc::ImageBlob, x: f64) -> NodeId {
+    s.edit("Place", |d, sel| {
+        d.images.insert(key.into(), blob);
+        let id = d.alloc_id();
+        let im = vectorcraft_doc::ImageObject {
+            key: key.into(),
+            width: 4,
+            height: 4,
+            xf: vectorcraft_geom::Affine::translate((x, 0.0)) * vectorcraft_geom::Affine::scale(10.0),
+            link: None,
+            placement: Default::default(),
+            pixels: None,
+        };
+        d.insert(d.default_layer(), 0, vectorcraft_doc::Node::new(id, vectorcraft_doc::NodeKind::Image(Box::new(im))))?;
+        sel.set([id]);
+        Ok(id)
+    })
+    .unwrap()
+}
+
+fn png(img: image::DynamicImage) -> vectorcraft_doc::ImageBlob {
+    let mut bytes = vec![];
+    img.write_to(&mut std::io::Cursor::new(&mut bytes), image::ImageFormat::Png).unwrap();
+    vectorcraft_doc::ImageBlob::png(bytes)
+}
+
+fn selected(s: &Session) -> Vec<NodeId> {
+    s.doc().unwrap().selection.objects.clone()
+}
+
+#[test]
+fn select_by_color_kind_finds_spot_colours_effects_and_image_models() {
+    let (mut s, plain) = red_rect();
+    // A spot colour, inside a group: the path is taken, not the group.
+    s.execute("swatch.new", &json!({"name": "Gold", "color": {"model": "cmyk", "c": 0.0, "m": 0.2, "y": 0.8, "k": 0.1}, "spot": true})).unwrap();
+    let spot = NodeId(s.execute("shape.rectangle", &json!({"x": 100, "y": 20, "width": 30, "height": 30})).unwrap()["id"].as_u64().unwrap());
+    s.execute("paint.setFill", &json!({"swatch": "Gold"})).unwrap();
+    s.execute("object.group", &json!({})).unwrap();
+    // A live colour adjustment.
+    let adjusted = NodeId(s.execute("shape.rectangle", &json!({"x": 140, "y": 20, "width": 30, "height": 30})).unwrap()["id"].as_u64().unwrap());
+    // Its own colour: setting the spot fill made it the default for new art too.
+    s.execute("paint.setFill", &json!({"color": "#00ff00"})).unwrap();
+    s.execute("effect.apply", &json!({"effect": "addon.color.invert"})).unwrap();
+    let rgb = image(&mut s, "rgb", png(image::DynamicImage::ImageRgb8(image::RgbImage::new(4, 4))), 0.0);
+    let gray = image(&mut s, "gray", png(image::DynamicImage::ImageLuma8(image::GrayImage::new(4, 4))), 50.0);
+    let inks = vectorcraft_doc::cmyk::Inks::new(4, 4, vec![0; 64]).unwrap();
+    let cmyk = image(&mut s, "cmyk", vectorcraft_doc::ImageBlob::cmyk_tiff(&inks).unwrap(), 100.0);
+    for (kind, ids) in [
+        ("spotColors", vec![spot]),
+        ("colorEffects", vec![adjusted]),
+        ("rgbImages", vec![rgb]),
+        ("grayImages", vec![gray]),
+        ("cmykImages", vec![cmyk]),
+    ] {
+        let v = s.execute("addon.color.select", &json!({"kind": kind})).unwrap();
+        assert_eq!((selected(&s), v["count"].clone()), (ids.clone(), json!(ids.len())), "{kind}");
+    }
+    // Locked objects are left out; none found selects nothing.
+    s.execute("select.set", &json!({"ids": [spot.0]})).unwrap();
+    s.execute("object.lock", &json!({})).unwrap();
+    assert_eq!(s.execute("addon.color.select", &json!({"kind": "spotColors"})).unwrap()["count"], 0);
+    assert!(!selected(&s).contains(&plain));
+    assert!(s.execute("addon.color.select", &json!({"kind": "pantone"})).is_err());
+    assert!(s.execute("addon.color.select", &json!({})).is_err());
+}

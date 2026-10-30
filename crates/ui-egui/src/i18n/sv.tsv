@@ -5843,3 +5843,12 @@ anchor	Points:	Punkter:
 @msg	`segment` must be "straight" or "curved"	`segment` måste vara "straight" eller "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` måste vara "free", "keepAngles" eller "symmetric"
 @msg	`{key}` must be [x, y]	`{key}` måste vara [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Markera efter färgtyp
+	Objects with Spot Colors	Objekt med dekorfärger
+	Objects with Color Effects	Objekt med färgeffekter
+	RGB Images	RGB-bilder
+	CMYK Images	CMYK-bilder
+	Grayscale Images	Gråskalebilder
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` måste vara spotColors, colorEffects, rgbImages, cmykImages eller grayImages

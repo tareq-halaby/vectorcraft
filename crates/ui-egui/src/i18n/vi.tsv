@@ -5418,3 +5418,12 @@ anchor	Points:	Điểm:
 @msg	`segment` must be "straight" or "curved"	`segment` phải là "straight" hoặc "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` phải là "free", "keepAngles" hoặc "symmetric"
 @msg	`{key}` must be [x, y]	`{key}` phải là [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Chọn theo loại màu
+	Objects with Spot Colors	Đối tượng có màu pha
+	Objects with Color Effects	Đối tượng có hiệu ứng màu
+	RGB Images	Ảnh RGB
+	CMYK Images	Ảnh CMYK
+	Grayscale Images	Ảnh thang độ xám
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` phải là spotColors, colorEffects, rgbImages, cmykImages hoặc grayImages

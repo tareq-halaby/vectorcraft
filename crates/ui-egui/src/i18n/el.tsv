@@ -5771,3 +5771,12 @@ anchor	Points:	Σημεία:
 @msg	`segment` must be "straight" or "curved"	Το `segment` πρέπει να είναι "straight" ή "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	Το `mode` πρέπει να είναι "free", "keepAngles" ή "symmetric"
 @msg	`{key}` must be [x, y]	Το `{key}` πρέπει να είναι [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	Επιλογή κατά είδος χρώματος
+	Objects with Spot Colors	Αντικείμενα με χρώματα spot
+	Objects with Color Effects	Αντικείμενα με εφέ χρώματος
+	RGB Images	Εικόνες RGB
+	CMYK Images	Εικόνες CMYK
+	Grayscale Images	Εικόνες σε κλίμακα του γκρι
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	Το `kind` πρέπει να είναι spotColors, colorEffects, rgbImages, cmykImages ή grayImages

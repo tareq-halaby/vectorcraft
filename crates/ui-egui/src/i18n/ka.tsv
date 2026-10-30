@@ -5809,3 +5809,12 @@ anchor	Points:	წერტილები:
 @msg	`segment` must be "straight" or "curved"	`segment` უნდა იყოს "straight" ან "curved"
 @msg	`mode` must be "free", "keepAngles" or "symmetric"	`mode` უნდა იყოს "free", "keepAngles" ან "symmetric"
 @msg	`{key}` must be [x, y]	`{key}` უნდა იყოს [x, y]
+
+# Color Effects add-on: Select by Color Kind.
+	Select by Color Kind	ფერის სახეობით არჩევა
+	Objects with Spot Colors	ობიექტები სპოტ-ფერებით
+	Objects with Color Effects	ობიექტები ფერის ეფექტებით
+	RGB Images	RGB გამოსახულებები
+	CMYK Images	CMYK გამოსახულებები
+	Grayscale Images	ნაცრისფერის გრადაციის გამოსახულებები
+@msg	`kind` must be spotColors, colorEffects, rgbImages, cmykImages or grayImages	`kind` უნდა იყოს spotColors, colorEffects, rgbImages, cmykImages ან grayImages
